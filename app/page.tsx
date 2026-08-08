@@ -5,11 +5,11 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
       <Image
         src="/black-myth-wukong-7680x4320-18300.jpg"
-        alt="Black Myth Wukong"
-        width={1000}
-        height={500}
-        priority
-        className="rounded-2xl shadow-2xl mb-8"
+      alt="Wukong"
+      width={1000}
+      height={600}
+      className="w-full max-w-[500px] h-auto rounded-3xl"
+      priority
       />
 
       <h1 className="text-5xl font-bold mb-4">
