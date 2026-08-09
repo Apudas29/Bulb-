@@ -92,16 +92,16 @@ export default function BulbPage() {
     : "border-gray-500 bg-gray-300";
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black px-4">
+    <div className="relative flex min-h-screen w-full overflow-x-hidden flex-col items-center justify-center bg-gradient-to-b from-gray-950 to-black px-4 py-10">
       {scare && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-red-700 text-8xl font-bold text-white animate-pulse">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 text-6xl sm:text-8xl font-bold text-red-500">
           👻 BOO!
         </div>
       )}
 
       <div className="flex flex-col items-center">
         {/* Wire */}
-        <div className="h-32 w-[4px] bg-gray-500"></div>
+        <div className="h-24 sm:h-32 w-[4px] bg-gray-500"></div>
 
         <button
           onClick={handleClick}
@@ -109,27 +109,27 @@ export default function BulbPage() {
         >
           {isOn && (
             <>
-              <div className="absolute inset-0 scale-[1.5] rounded-full bg-white/30 blur-[80px]"></div>
-              <div className="absolute inset-0 scale-[2] rounded-full bg-white/20 blur-[150px]"></div>
+              <div className="absolute inset-0 scale-[1.4] rounded-full bg-white/30 blur-[60px]"></div>
+              <div className="absolute inset-0 scale-[1.8] rounded-full bg-white/20 blur-[120px]"></div>
             </>
           )}
 
-          {/* Round Glass Bulb */}
+          {/* Bulb */}
           <div
-            className={`relative h-80 w-80 overflow-hidden rounded-full border-4 transition-all duration-300 ${bulbStyle}`}
+            className={`relative h-64 w-64 sm:h-80 sm:w-80 overflow-hidden rounded-full border-4 transition-all duration-300 ${bulbStyle}`}
           >
             {/* Reflection */}
-            <div className="absolute left-16 top-10 h-52 w-10 rounded-full bg-white/30 blur-md"></div>
+            <div className="absolute left-10 top-8 h-40 w-8 rounded-full bg-white/30 blur-md sm:left-16 sm:top-10 sm:h-52 sm:w-10"></div>
 
             {/* Filament */}
             <div className="absolute left-1/2 top-[48%] -translate-x-1/2 -translate-y-1/2">
-              <div className="flex gap-20">
-                <div className="h-28 w-[2px] bg-gray-700"></div>
-                <div className="h-28 w-[2px] bg-gray-700"></div>
+              <div className="flex gap-12 sm:gap-20">
+                <div className="h-20 sm:h-28 w-[2px] bg-gray-700"></div>
+                <div className="h-20 sm:h-28 w-[2px] bg-gray-700"></div>
               </div>
 
               <div
-                className={`absolute left-1/2 top-0 -translate-x-1/2 text-3xl font-bold ${
+                className={`absolute left-1/2 top-0 -translate-x-1/2 text-xl sm:text-3xl font-bold ${
                   isOn ? "text-white" : "text-gray-600"
                 }`}
               >
@@ -140,15 +140,15 @@ export default function BulbPage() {
 
           {/* Neck */}
           <div
-            className={`mx-auto h-20 w-24 border-x-4 border-b-4 ${
+            className={`mx-auto h-16 w-20 sm:h-20 sm:w-24 border-x-4 border-b-4 ${
               isOn
                 ? "border-yellow-200 bg-yellow-300"
                 : "border-gray-500 bg-gray-300"
             }`}
           ></div>
 
-          {/* Screw Base */}
-          <div className="mx-auto w-32 rounded-b-xl bg-gray-700 p-3 shadow-xl">
+          {/* Base */}
+          <div className="mx-auto w-24 sm:w-32 rounded-b-xl bg-gray-700 p-3 shadow-xl">
             <div className="space-y-2">
               {[1, 2, 3, 4, 5, 6].map((line) => (
                 <div
@@ -160,15 +160,15 @@ export default function BulbPage() {
           </div>
         </button>
 
-        <h1 className="mt-10 text-center text-4xl font-bold text-white">
+        <h1 className="mt-8 text-center text-2xl sm:text-4xl font-bold text-white">
           {isOn ? "💡 Bulb ON" : "🌙 Bulb OFF"}
         </h1>
 
-        <p className="mt-4 text-xl text-white capitalize">
+        <p className="mt-4 text-base sm:text-xl text-white capitalize">
           Current Color: {color}
         </p>
 
-        <p className="mt-6 text-center text-gray-400">
+        <p className="mt-6 text-center text-sm sm:text-lg text-gray-400">
           Single Click → ON / OFF
           <br />
           Double Click → Change Color
